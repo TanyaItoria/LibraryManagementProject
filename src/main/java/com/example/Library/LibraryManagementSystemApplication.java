@@ -16,7 +16,7 @@ public class LibraryManagementSystemApplication implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) {         //When I write throws Exception here, it gave me error, why?
+    public void run(String... args) throws Exception{         //When I write throws Exception here, it gave me error, why?
         librarystarter.start();
     }
 }

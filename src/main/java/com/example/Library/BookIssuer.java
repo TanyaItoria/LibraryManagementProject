@@ -14,17 +14,17 @@ public class BookIssuer {
     public void issueProcess() {
         ArrayList<Book> books = bookDb.getBooks();
         System.out.println("Enter id of book which you want to issue.");
-
+        System.out.println("Enter quantity of books which you want to issue.");
         Scanner sc = new Scanner(System.in);
         int BookId = sc.nextInt();
         int quantity = sc.nextInt();
         for (Book book : books) {
             if (book.getBookId() == BookId) {
                 if (book.getNumberOfBooks() >= quantity) {
-                    System.out.println(quantity + " number of books are issued.");
+                    System.out.println(quantity + " books are issued.");
                     book.decrementBookQuantity(quantity);
                 } else {
-                    System.out.println(quantity + " number of books are not available.");
+                    System.out.println("Sorry! " + quantity + " books are not available.");
                 }
                 return;
             }
