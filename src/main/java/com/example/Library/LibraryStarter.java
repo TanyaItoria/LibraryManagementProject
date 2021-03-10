@@ -23,26 +23,29 @@ public class LibraryStarter {
         String name = sc.next();
         System.out.println("Enter password");
         String password = sc.next();
+        int choice=1;
         if (user_name.equals(name) && user_password.equals(password)) {
-            System.out.println("Welcome to the library!");
-            System.out.println("You can choose from the following functions.");
-            System.out.println();
-            System.out.println("If you want to Issue Books   : press 1");
-            System.out.println("If you want to Return Books  : press 2");
-            System.out.println("If you want to Logout        : press 3");
-            int option = sc.nextInt();
-            switch (option) {
-                case 1:
-                    issue.issueProcess();
-                    break;
-                case 2:
-                    reeturn.returnProcedure();
-                    break;
-                case 3:
-                    logout.logout();
-                    break;
-                default:
-                    System.out.println("OOPS!...You entered wrong choice.");
+            while (choice!=3) {
+                System.out.println("Welcome to the library!");
+                System.out.println("You can choose from the following functions.");
+                System.out.println();
+                System.out.println("If you want to Issue Books   : press 1");
+                System.out.println("If you want to Return Books  : press 2");
+                System.out.println("If you want to Logout        : press 3");
+                int option = sc.nextInt();
+                switch (option) {
+                    case 1:
+                        issue.issueProcess();
+                        break;
+                    case 2:
+                        reeturn.returnProcedure();
+                        break;
+                    case 3:
+                        logout.logout();
+                        return;
+                    default:
+                        System.out.println("OOPS!...You entered wrong choice.");
+                }
             }
         } else {
             System.out.println("Wrong user name or password");

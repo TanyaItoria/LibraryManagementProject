@@ -14,10 +14,10 @@ public class BookDatabase {
     }
 
     public BookDatabase() {
-        books.add(new Book(1, 11, "Book1", "Author1"));
-        books.add(new Book(2, 12, "Book2", "Author2"));
-        books.add(new Book(3, 13, "Book3", "Author3"));
-        books.add(new Book(4, 14, "Book4", "Author4"));
+        books.add(new Book(100, 11, "Book1", "Author1"));
+        books.add(new Book(200, 12, "Book2", "Author2"));
+        books.add(new Book(300, 13, "Book3", "Author3"));
+        books.add(new Book(400, 14, "Book4", "Author4"));
 
     }
 }

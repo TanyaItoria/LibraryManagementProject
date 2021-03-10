@@ -10,17 +10,22 @@ import java.util.Scanner;
 public class BookIssuer {
     @Autowired
     BookDatabase bookDb;
+    @Autowired
+    Statistics statistics;
 
     public void issueProcess() {
         ArrayList<Book> books = bookDb.getBooks();
         System.out.println("Enter id of book which you want to issue.");
         System.out.println("Enter quantity of books which you want to issue.");
         Scanner sc = new Scanner(System.in);
-        int BookId = sc.nextInt();
+        int bookId = sc.nextInt();
         int quantity = sc.nextInt();
         for (Book book : books) {
-            if (book.getBookId() == BookId) {
+            if (book.getBookId() == bookId) {
                 if (book.getNumberOfBooks() >= quantity) {
+                    System.out.println("Enter your id");
+                    int studentId = sc.nextInt();
+                    statistics.assignBook(studentId, bookId,quantity);
                     System.out.println(quantity + " books are issued.");
                     book.decrementBookQuantity(quantity);
                 } else {
@@ -28,6 +33,7 @@ public class BookIssuer {
                 }
                 return;
             }
+
         }
         System.out.println("Book with given Id is not found.");
     }
